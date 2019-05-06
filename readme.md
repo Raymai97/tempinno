@@ -1,10 +1,25 @@
-## WTF
+## Android key components
 
-- Explain Android key component.
+- Linux kernel
+  - responsible for device, driver, memory and power management
 
-- State functions of OLAP.
+- Native Libraries
+  - such as WebKit, OpenGL and SQLite
+
+- Android Runtime
+  - consists of core libraries and Dalvik VM
+
+- Application Framework
+  - provide Android APIs such as UI, telephony, resources, locations and package managers
+
+- Applications
+  - powered by Application Framework
+  - such as Contact, Camera, Phone, Calculator app
 
 ## Misc Definition of terms
+
+- GSON
+  - a Java library for converting JSON representation into Java Object and vice versa
 
 - OHA / Open Handset Alliance
   - an association whose goal is to
@@ -26,6 +41,8 @@
 - FXML / FX Markup Language.
 
 - RIA / Rich Internet Application.
+  - has many characteristics of desktop application software
+  - typically delivered via extensive JS, site-specific browser and browser plug-in.
 
 - Scene Builder
   - a freely available GUI design tool for JavaFX application
@@ -401,3 +418,40 @@ class SomeClass {
 - `WorkerStateEvent` class
   - tells event when the state of a `Worker` implementation changes
 
+## JavaFX Layout
+
+- AnchorPane
+  - anchors the nodes at a particular distance from the pane
+- FlowPane
+  - wraps all the nodes in a flow
+  - horz wraps pane elements at its height
+  - vert wraps pane elements at its width
+- GridPane
+  - arranges the nodes as a grid of rows and columns
+- HBox
+  - arranges the nodes in a single horizontal row
+- VBox
+  - arranges the nodes in a single vertical row
+
+## JavaFX Life Cycle
+
+The `javafx.application.Application` class provides methods that define the life cycle of a JavaFX application.
+
+```java
+public void init();
+public abstract void start(Stage primaryStage);
+public void stop();
+```
+
+- `init`
+  - called after `Application` object instantiated.
+  - for application-specific initialization.
+  - at this stage JavaFX framework is not ready yet for creating GUI.
+
+- `start`
+  - called after JavaFX framework has created GUI thread.
+  - for application to init a `Scene` and assign it to the `primaryStage`.
+
+- `stop`
+  - called when application is about to terminate.
+  - for application to cleanup, free any allocated resource.
